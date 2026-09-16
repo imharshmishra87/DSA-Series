@@ -23,8 +23,9 @@ value = "NITIN"
 
 
 def check_palindrome(value: str, left: int, right: int):
+    data = "".join([i for i in value if i.isalpha()]).lower()
     while left <= right:
-        if value[left] == value[right]:
+        if data[left] == data[right]:
             left += 1
             right -= 1
         else:
@@ -32,7 +33,7 @@ def check_palindrome(value: str, left: int, right: int):
     return True
 
 
-# print(check_palindrome(value=value, left=0, right=len(value) - 1))
+print(check_palindrome(value=value, left=0, right=len(value) - 1))
 
 
 """Time complexity is O(N) and space complexity is O(N)"""
@@ -46,4 +47,4 @@ def check_plaindrome_recursion(value: str, left: int, right: int) -> bool:
     return check_plaindrome_recursion(value=value, left=left + 1, right=right - 1)
 
 
-print(check_plaindrome_recursion(value=value, left=0, right=len(value) - 1))
+# print(check_plaindrome_recursion(value=value, left=0, right=len(value) - 1))
