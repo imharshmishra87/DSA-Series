@@ -1,11 +1,10 @@
-def get_sum(arr: list, target: int):
+def get_sum(nums: list, target: int):
     seen = {}
-    for i in arr:
-        num = target - i
-        if num in seen:
-            return (i, num)
-        else:
-            seen[i] = num
+    for index, num in enumerate(nums):
+        complement = target - num
+        if complement in seen:
+            return [seen[complement], index]
+        seen[num] = index
 
 
-print(get_sum(arr=[2, 7, 11, 15], target=13))
+print(get_sum(nums=[2, 7, 11, 15], target=13))
