@@ -1,5 +1,20 @@
 from typing import List
 
+"""Algorithm:"""
+"""Rotate array by left & right both have the same code structure it simply depends upon the reversal of the array
+    IN CASE OF LEFT ARRAY ROTATION:
+    1. first calculate k=k%n
+    2. reverse the k elements eg [1,2,3,4,5],k=2 --> [2,1,3,4,5] (0,k-1)
+    3. reverse the remaining elements eg:[2,1,3,4,5]-->[2,1,5,4,3] (k,n-1)
+    4. finally reverse the entire array eg: [2,1,5,4,3]-->[3,4,5,1,2] (0,n-1)
+
+    IN CASE OF RIGHT ARRAY ROTATION:
+    1. first calculate k=k%n
+    2. Completely reverse the entire array eg:[1,2,3,4,5]-->[5,4,3,2,1] (0,n-1)
+    3. Only reverse the k elements eg:[5,4,3,2,1]-->[4,5,3,2,1] (0,k-1)
+    4. Reverse the remaining array eg:[4,5,3,2,1]-->[4,5,1,2,3] (k, n-1)
+"""
+
 
 def RotateRight(nums: List[int]) -> List[int]:
     n = len(nums)
